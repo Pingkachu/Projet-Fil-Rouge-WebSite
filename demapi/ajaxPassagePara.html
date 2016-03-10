@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+		
+	<head>
+		<meta charset = "utf-8" />
+		<title>Ajax - Load - Passage de Paramètres</title>
+	</head>
+
+	<body>
+		<input type = "text" for = "action" />
+		
+		<button id = "action">Lancer la requête AJAX</button><br>
+		<div id="r">Entrez un nombre compris entre 1 et 10 pour afficher</div>
+		
+		<script src = "jquery.js"></script>
+		<script>
+			$(function(){
+				$('#action').click(function(){
+					var param = 'l=' + $('#href').val();
+					
+					$.ajax({
+						type: 'GET',
+						url:'proverbes.php',
+						data:param,
+						timeout:3000,
+						success:function(data){
+						alert(data);},
+						error:function(){}
+						})
+				})
+			})
+	
+	</body>
+
+</html>
